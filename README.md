@@ -47,6 +47,15 @@ Options		  = []
 UserTag		  = 0
 ```
 
+# Command line tool
+- **Usage**: Azote [Command] [Options] [<OpCode>...]
+- **Command**:
+  - -h = Display help.
+  - -d = Disasm.
+- **Options**:
+  - -L = Little Endian.
+  - -B = Big Endian.
+- **e.g**: ```Azote -d -B "0x0B8754C5 0x8B2D6074 0xCB3333F4 0x4D4079EF 0x4CDF6C20 0x4E608400"```
 # Benchmarks
 
 Decoding 7 million random instructions without printing:
