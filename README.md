@@ -7,7 +7,7 @@ Azote is the faster and lightweight disassembler for AArch64.
 - Supports switching to aliases instructions.
 - Supports FPC and Delphi. 
 - For each decoded instruction, it provides all the necessary info for a good analysis. 
-- Built with unique feature "Patches" which explains why it's fast and lightweight.
+- Built with unique feature "**Patches**" which explains why it's fast and lightweight.
 
 # Fast & lightweight
 ## ADT
@@ -34,19 +34,28 @@ end;
 ```
 After decoding it, it outputs the following info:
 ```pas
-IID		      = INSN_ADD
-OpCode		  = 2335474481 {$8B348331}
-Condition	  =	cdNone
-IClass		  = c_addsub_ext
-Syntax		  = 'add x17, x25, w20, sxtb'
-OperandCount  =	3
+IID           = INSN_ADD
+OpCode        = 2335474481 {$8B348331}
+Condition     = cdNone
+IClass        = c_addsub_ext
+Syntax        = 'add x17, x25, w20, sxtb'
+OperandCount  = 3
 Operands[0]   = {Flags:[ofDestination]; OperandType:otRegister; Register:REG_X17}
 Operands[1]   = {Flags:[]; OperandType:otRegister; Register:REG_X25}
 Operands[2]   = {Flags:[ofShifter]; OperandType:otRegister; Register:REG_W20; Shifter:sfSxtb; Amount:0}
-Options		  = []
-UserTag		  = 0
+Options       = []
+UserTag       = 0
 ```
 
+# Command line tool
+- **Usage**: Azote [Command] [Options] [<OpCode>...]
+- **Command**:
+  - -h = Display help.
+  - -d = Disasm.
+- **Options**:
+  - -L = Little Endian.
+  - -B = Big Endian.
+- **e.g**: ```Azote -d -B "0x0B8754C5 0x8B2D6074 0xCB3333F4 0x4D4079EF 0x4CDF6C20 0x4E608400"```
 # Benchmarks
 
 Decoding 7 million random instructions without printing:
@@ -58,11 +67,11 @@ Decoding 7 million random instructions with printing:
 As you can see, it's very fast to decode instructions. However, printing instructions slow down the process and that because Azote uses Delphi string instead of PChar. I believe I can improve the process up to [40%-60%] if I switch to PChar. But for now, I will stick with string type.
 
 # Tests
-While Azote currently is in beta phase, it was able to validate mostly all LLVM tests (95%). Because tests were automatically converted from LLVM to DUnitX, some of them escaped from the patterns match. Also, I got some false positive result with few of them (e.g: ins vs mov instruction where Azote always decodes the preferred form 'mov').
+While Azote currently is in beta phase, it was able to validate mostly all **LLVM** tests (95%). Because tests were automatically converted from **LLVM** to **DUnitX**, some of them escaped from the patterns match. Also, I got some false positive result with few of them (e.g: ins vs mov instruction where Azote always decodes the preferred form 'mov').
 
 # Supported compilers and platforms.
 - Azote was designed to be a cross-platform library. For now, I tested it only on windows.
-- It compiles under Delphi and FPC: Tested on FPC(3.0.2) and Delphi(10.2).
+- It compiles under **Delphi** and **FPC**: Tested on FPC(3.0.2) and Delphi(10.2).
 
 Please give feedback on this area. 
 
