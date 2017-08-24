@@ -58,7 +58,7 @@ Decoding 7 million random instructions with printing:
 As you can see, it's very fast to decode instructions. However, printing instructions slow down the process and that because Azote uses Delphi string instead of PChar. I believe I can improve the process up to [40%-60%] if I switch to PChar. But for now, I will stick with string type.
 
 # Tests
-While Azote currently is in beta state, it was able to validate mostly all LLVM tests (95%). Because tests were automatically converted from LLVM to DUnitX, some of them escaped from the patterns match. Also, I got some false positive result with few of them (e.g: ins vs mov instruction where Azote always decodes the preferred form 'mov').
+While Azote currently is in beta phase, it was able to validate mostly all LLVM tests (95%). Because tests were automatically converted from LLVM to DUnitX, some of them escaped from the patterns match. Also, I got some false positive result with few of them (e.g: ins vs mov instruction where Azote always decodes the preferred form 'mov').
 
 # Supported compilers and platforms.
 - Azote was designed to be a cross-platform library. For now, I tested it only on windows.
