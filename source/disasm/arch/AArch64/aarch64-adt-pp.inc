@@ -21,7 +21,7 @@ begin;
       - Uses single instruction for testing (only test) rather than three instruction (mov,shift and test).
 	    As a result, the generated code remains small and faster.
 	 
-      - When the last node is not sealed, the tree shots the instruction that has the highest number of set bits of it's mask.
+      - When the last node is not sealed, the tree shots the instruction that has the highest number of set bits of its mask.
 	    As a result, the disasm guarantees that it will never confuse between two similar instruction. 
 		Also, when disassembling, it will never waste time to do semantic checks that allow to distinguish between those two instructions. 
 		

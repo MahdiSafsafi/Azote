@@ -181,6 +181,7 @@ type
     /// <summary>Argument type.</summary>
     /// <para>Accessing operand info depends on OperandType and Flags.</para>
     OperandType: TOperandType;
+
     case TOperandType { OperandType } of
       otList: (List: TA64ListInfo);
       otCondition: (Condition: TA64Condition);
