@@ -570,7 +570,7 @@ begin
 
   if ((E > 0) and (E < $1F)) then
   begin
-    // Value = (–1)^S × 2^(exponent-15) × (1.fraction).
+    // Value = (-1)^S × 2^(exponent-15) × (1.fraction).
     Result := Power(-1, S) * Power(2, E - 15) * (Dec2FP(1, T));
   end
   else if (E = 0) then
@@ -585,7 +585,7 @@ begin
     end
     else { fraction != 0 }
     begin
-      // Value = (–1)^S × 2^(–14) × (0.fraction).
+      // Value = (-1)^S × 2^(-14) × (0.fraction).
       Result := Power(-1, S) * Power(2, -14) * (Dec2FP(0, T));
     end;
   end
