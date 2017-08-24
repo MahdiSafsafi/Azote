@@ -77,3 +77,8 @@ Please give feedback on this area.
 
 # Docs
 Please refer to the [Wiki](https://github.com/MahdiSafsafi/Azote/wiki) page. And take a look to the included [demos](https://github.com/MahdiSafsafi/Azote/tree/master/demos).
+
+# Credits
+- ARM (for opening their specification).
+- LLVM (for tests).
+- Binutils (for ADT).
