@@ -38,7 +38,6 @@ end;
 var
   TimeSpan: TTimeSpan;
   Stopwatch: TStopwatch;
-  N: Int64 = 0;
   I: Integer;
   S: string;
   ProcessorName: string;
@@ -56,11 +55,11 @@ const
   Printing = 'Disabled';
 {$ENDIF NEED_PRINTER}
 
-{$IFDEF NEED_PRINTER}
+{$IFDEF NEED_ALIAS}
   Alias = 'Enabled';
-{$ELSE !NEED_PRINTER}
+{$ELSE !NEED_ALIAS}
   Alias = 'Disabled';
-{$ENDIF NEED_PRINTER}
+{$ENDIF NEED_ALIAS}
 
 
 begin
@@ -76,13 +75,13 @@ begin
   Stopwatch.Reset;
   Stopwatch.Start;
   try
-    for I := 0 to 1000 do
-      Inc(N, Test());
+    for I := 1 to 1000 do
+     Test;
     Stopwatch.Stop;
     TimeSpan := Stopwatch.Elapsed;
     S := TimeSpan;
     Writeln(Format('On ''%s'', I decoded ''%d'' instruction in ''%s''.',
-      [ProcessorName, N, S]));
+      [ProcessorName, NumberOfInstruction, S]));
     Readln;
   except
     on E: Exception do

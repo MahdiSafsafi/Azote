@@ -173,7 +173,7 @@ type
 
   TA64Operand = record
     /// <summary>Argument Index.</summary>
-    ID: ShortInt;
+    ID: Integer;
 
     /// <summary>Argument flags.</summary>
     Flags: TOperandFlags;
