@@ -7,7 +7,7 @@ Azote is the faster and lightweight disassembler for AArch64.
 - Supports switching to aliases instructions.
 - Supports FPC and Delphi. 
 - For each decoded instruction, it provides all the necessary info for a good analysis. 
-- Built with unique feature "Patches" which explains why it's fast and lightweight.
+- Built with unique feature "**Patches**" which explains why it's fast and lightweight.
 
 # Fast & lightweight
 ## ADT
