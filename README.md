@@ -2,7 +2,7 @@
 Azote is the faster and lightweight disassembler for AArch64.
 # Features
 - Extremely fast and tinny in size.
-- Supports all instructions of ARMv8.3 including (SIMD, NEON, FP16,...).
+- Supports all instructions of **ARMv8.3** including (SIMD, NEON, FP16,...).
 - No dependencies on platform specific APIs (it should run on all platforms).
 - Supports switching to aliases instructions.
 - Supports FPC and Delphi. 
