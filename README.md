@@ -34,17 +34,17 @@ end;
 ```
 After decoding it, it outputs the following info:
 ```pas
-IID		      = INSN_ADD
-OpCode		  = 2335474481 {$8B348331}
-Condition	  =	cdNone
-IClass		  = c_addsub_ext
-Syntax		  = 'add x17, x25, w20, sxtb'
-OperandCount  =	3
+IID           = INSN_ADD
+OpCode        = 2335474481 {$8B348331}
+Condition     = cdNone
+IClass        = c_addsub_ext
+Syntax        = 'add x17, x25, w20, sxtb'
+OperandCount  = 3
 Operands[0]   = {Flags:[ofDestination]; OperandType:otRegister; Register:REG_X17}
 Operands[1]   = {Flags:[]; OperandType:otRegister; Register:REG_X25}
 Operands[2]   = {Flags:[ofShifter]; OperandType:otRegister; Register:REG_W20; Shifter:sfSxtb; Amount:0}
-Options		  = []
-UserTag		  = 0
+Options       = []
+UserTag       = 0
 ```
 
 # Command line tool
