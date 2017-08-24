@@ -4,11 +4,13 @@ interface
 
 uses Azote.Disassembler.AArch64;
 
-function Test: Integer;
+var
+  NumberOfInstruction: Int64 = 0;
+
+procedure Test;
+
 implementation
 
-var 
-  I: Integer = 0;
 procedure Decode(OpCode: UInt32);
 var
   Insn:TA64Instruction;
@@ -16,10 +18,10 @@ begin
   FillChar(Insn, SizeOf(TA64Instruction), #00);
   Insn.OpCode := OpCode;
   DecodeInstruction(Insn);
-  Inc(I);
+  Inc(NumberOfInstruction);
 end;
 
-function Test: Integer;
+procedure Test;
 begin
   Decode($10000000);
   Decode($30000000);
@@ -7021,42 +7023,5 @@ begin
   Decode($F84073AB);
   Decode($B8402000);
   Decode($B8500000);
-  Decode($3C5FE022);
-  Decode($7C403043);
-  Decode($7C5FC063);
-  Decode($BC403083);
-  Decode($BC5FC0A3);
-  Decode($FC4040C4);
-  Decode($FC5F80E4);
-  Decode($3CC08105);
-  Decode($3CDF0125);
-  Decode($F81F83AB);
-  Decode($F80073AB);
-  Decode($B8002000);
-  Decode($B8100000);
-  Decode($3C1FE022);
-  Decode($7C003043);
-  Decode($7C1FC063);
-  Decode($BC003083);
-  Decode($BC1FC0A3);
-  Decode($FC0040C4);
-  Decode($FC1F80E4);
-  Decode($3C808105);
-  Decode($3C9F0125);
-  Decode($385FF023);
-  Decode($78401044);
-  Decode($785FF065);
-  Decode($38DFF086);
-  Decode($389FF0A7);
-  Decode($78C010C8);
-  Decode($78DFF0E9);
-  Decode($78801101);
-  Decode($789FF122);
-  Decode($B880A143);
-  Decode($B89FF164);
-  Decode($381FF023);
-  Decode($78001044);
-  Decode($781FF065);
-  Result := I;
 end;
 end.
