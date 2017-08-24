@@ -26,6 +26,9 @@
 #*.obj
 #
 
+# Generator folder.
+Generator/
+
 # Delphi compiler-generated binaries (safe to delete)
 *.exe
 *.dll
