@@ -71,7 +71,7 @@ While Azote currently is in beta phase, it was able to validate mostly all LLVM 
 
 # Supported compilers and platforms.
 - Azote was designed to be a cross-platform library. For now, I tested it only on windows.
-- It compiles under Delphi and FPC: Tested on FPC(3.0.2) and Delphi(10.2).
+- It compiles under **Delphi** and **FPC**: Tested on FPC(3.0.2) and Delphi(10.2).
 
 Please give feedback on this area. 
 
