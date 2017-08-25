@@ -1,5 +1,11 @@
 # Azote
 Azote is the faster and lightweight disassembler for AArch64.
+
+# TODO
+- Add **AArch32** support.
+- Add **x86** support.
+- Possibly **SVE extension** support ? 
+
 # Features
 - Extremely fast and tinny in size.
 - Supports all instructions of **ARMv8.3** including (SIMD, NEON, FP16,...).
