@@ -1493,7 +1493,7 @@ begin
   else if (RegisterClassInfo[RegClass].Ts <> T_NONE) then
     Internal^.Ts := RegisterClassInfo[RegClass].Ts;
 
-  if FixRm then
+  if FixRm { M:Rm } then
     RegNo := RegNo and $0F; // Drop M field.
 
   with Operand do
@@ -1672,7 +1672,7 @@ begin
 
   BaseNo := ExtractField(Code, FLD_Rn, IClass);
   if BaseNo = 31 then
-    Inc(BaseNo);
+    Inc(BaseNo); // SP.
 
   if (Kind = addr_struct) then
   begin
@@ -1974,7 +1974,7 @@ begin
     // eg: SHL <V><d>, <V><n>, #<shift>.
     Immh := ExtractField(Insn.OpCode, FLD_immh, Insn.IClass);
     if (Immh = 0) then
-      exit(False);
+      exit(False); // A constraint.
     Immh := ScanBit(Immh, False);
     if (Kind = ShiftLeft) then
       Value := Value - immh2Shift[Immh]
@@ -2304,6 +2304,7 @@ begin
   { 'B' instruction can run conditionaly. }
   if ((Insn.IID = INSN_B) and (Flags and F_COND <> 0)) then
   begin
+    { cond field }
     LInfo.Pos := 0;
     LInfo.Size := 4;
     Cond := ExtractField(Insn.OpCode, LInfo);
