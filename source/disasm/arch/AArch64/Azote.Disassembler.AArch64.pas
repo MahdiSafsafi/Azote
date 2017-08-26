@@ -680,7 +680,7 @@ begin
   Result := ExtractField(Code, Info);
 end;
 
-function ExtractFields(Code: UInt32; Fields: array of TField; IClass: TA64Class): UInt32;
+function ExtractFields(Code: UInt32; const Fields: array of TField; IClass: TA64Class): UInt32;
 var
   I: Integer;
   Field: TField;
