@@ -1,6 +1,6 @@
 // ******************************************************************
 //
-// Copyright (C) 2017 Mahdi Safsafi.
+// Copyright (C) 2017-2019 Mahdi Safsafi.
 //
 // https://github.com/MahdiSafsafi/Azote
 //
