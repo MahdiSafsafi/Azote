@@ -1,12 +1,14 @@
 program Azote;
 
+{$IFNDEF FPC}
 {$APPTYPE CONSOLE}
+{$ENDIF}
 
 {$R *.res}
 
 
 uses
-  System.SysUtils,
+  {$IFNDEF FPC}System.{$ENDIF}SysUtils,
   Azote.Disassembler.AArch64 in '..\source\disasm\arch\AArch64\Azote.Disassembler.AArch64.pas',
   Azote.Printer.AArch64 in '..\source\print\arch\AArch64\Azote.Printer.AArch64.pas';
 
@@ -52,7 +54,11 @@ type
 var
   I: Integer;
   Param: string;
+  {$IFDEF FPC}
+  OpCodes: TStringArray;
+  {$ELSE}
   OpCodes: TArray<string>;
+  {$ENDIF}
   S, E: string;
   OpCode: UInt32;
   Commands: TCommands;
